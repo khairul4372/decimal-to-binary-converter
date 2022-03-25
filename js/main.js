@@ -1,25 +1,19 @@
-// Selecting DOM
-const submit = document.getElementById('submit');
-const result = document.getElementById('result');
+const result = document.getElementById('result')
+const submit = document.getElementById('submit')
 
-// Function
-function binary(e) {
-  e.preventDefault();
-  const num = document.getElementById('number').value;
-  console.log(typeof num);
-  // Input validation
-  if (num === '') {
-    alert('Please enter a number');
-  } else if (num < 0) {
-    alert('Please enter a positive number');
+function binary(e){
+  e.preventDefault()
+  const input = document.getElementById('number').value
+  
+  if (input === ''){
+    alert('Please enter a decimal number')
+  } else if( input < 0){
+    alert('Please enter a positive number')
   } else {
-    result.style.visibility = 'visible';
+    result.style.visibility = 'visible'
   }
 
-  //Converting to Binary
-  let binary = Number(num).toString(2);
-  result.innerHTML = binary;
+  binaryNumber = Number(input).toString(2)
+  result.innerText = binaryNumber
 }
-
-// Event Listener
-submit.addEventListener('click', binary);
+submit.addEventListener('click', binary)
